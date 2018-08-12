@@ -16,7 +16,6 @@ class GetUserInputGui:
         self.e1.pack()
         self.e1.delete(0, END)
         self.e1.insert(0, ".")
-        self.path = self.e1.get()
 
         self.label = Label(master, text="File extension to use:")
         self.label.pack()
@@ -24,7 +23,6 @@ class GetUserInputGui:
         self.e2.pack()
         self.e2.delete(0, END)
         self.e2.insert(0, "yml")
-        self.extension = self.e2.get()
 
         self.label = Label(master, text="Name of file to write the paths to:")
         self.label.pack()
@@ -32,7 +30,7 @@ class GetUserInputGui:
         self.e3.pack()
         self.e3.delete(0, END)
         self.e3.insert(0, "test.txt")
-        self.filename = self.e3.get()
+
         self.close_button = Button(master, text="OK", command=self.on_button)
         self.close_button.pack()
 
