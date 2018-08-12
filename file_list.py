@@ -16,3 +16,9 @@ class FileHandler:
             if file[len(extension) * -1:] in extension:
                 filtered_files.append(file)
         return filtered_files
+
+    @staticmethod
+    def save_filenames_to_file(filenames_to_write, file):
+        with open(file, "w+") as f:
+            for fn in filenames_to_write:
+                f.write(fn + "\n")
