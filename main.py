@@ -48,18 +48,19 @@ class CheckboxGui:
         self.filename = filename
         self.master = master
         master.title("pyFilePathPrinter")
-        self.label = Label(master, text="This is the pyFilePathPrinter")
-        self.label.pack()
+
         files = fh.filter_files(fh.list_files(path), extension)
+        i = 0
         for file in files:
             var1 = IntVar()
             self.Checkbutton = Checkbutton(master, text=file, variable=var1)
             self.chosen_files.append([file, var1])
-            self.Checkbutton.pack()
+            self.Checkbutton.grid(row=i, sticky=W)
+            i += 1
         self.button = Button(master, text="Print", command=self.print_out)
-        self.button.pack()
+        self.button.grid()
         self.close_button = Button(master, text="Close", command=master.quit)
-        self.close_button.pack()
+        self.close_button.grid()
 
     def print_out(self):
         write_files = []
